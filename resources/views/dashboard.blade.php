@@ -309,7 +309,7 @@ setTimeout(() => {
             color:#312e81;
             margin-bottom:8px;
         ">
-            Dashboard Keuangan
+            Dashboard Keuangan • v1.0
         </h1>
 
         <p style="
