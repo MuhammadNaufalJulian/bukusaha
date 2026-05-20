@@ -1,7 +1,13 @@
+
+
+
+
+
+
 <x-app-layout>
 
 <div style="
-    background:#f5f3ff;
+    background:#ecfdf5;
     min-height:100vh;
     padding:30px;
 ">
@@ -11,7 +17,7 @@
     @if(session('success'))
 
     <div style="
-        background:linear-gradient(135deg,#22c55e,#16a34a);
+        background:linear-gradient(135deg,#10b981,#059669);
         color:white;
         padding:18px 22px;
         border-radius:18px;
@@ -81,14 +87,14 @@
             <h1 style="
                 font-size:35px;
                 font-weight:bold;
-                color:#312e81;
+                color:#064e3b;
                 margin-bottom:8px;
             ">
                 Semua Transaksi
             </h1>
 
             <p style="
-                color:#6366f1;
+                color:#047857;
             ">
                 Kelola seluruh transaksi keuangan
             </p>
@@ -97,7 +103,7 @@
 
         <a href="/transactions/create"
            style="
-                background:linear-gradient(135deg,#2563eb,#1d4ed8);
+                background:linear-gradient(135deg,#10b981,#059669);
                 color:white;
                 padding:14px 22px;
                 border-radius:15px;
@@ -197,8 +203,9 @@
             style="
                 padding:14px;
                 border-radius:14px;
-                border:1px solid #ddd;
+                border:1px solid #bbf7d0;
                 min-width:250px;
+                box-shadow:0 0 0 5px rgba(16,185,129,.08);
                 outline:none;
             "
         >
@@ -210,8 +217,9 @@
             style="
                 padding:14px;
                 border-radius:14px;
-                border:1px solid #ddd;
+                border:1px solid #bbf7d0;
                 outline:none;
+                box-shadow:0 0 0 5px rgba(16,185,129,.08);
             "
         >
 
@@ -238,6 +246,7 @@
                 border-radius:14px;
                 border:1px solid #ddd;
                 outline:none;
+                box-shadow:0 0 0 5px rgba(16,185,129,.08);
             "
         >
 
@@ -265,6 +274,7 @@
                 border-radius:14px;
                 border:1px solid #ddd;
                 outline:none;
+                box-shadow:0 0 0 5px rgba(16,185,129,.08);
             "
         >
 
@@ -286,7 +296,7 @@
         <button
             type="submit"
             style="
-                background:#2563eb;
+                background:#10b981;
                 color:white;
                 border:none;
                 padding:14px 22px;
@@ -306,7 +316,7 @@
         background:white;
         border-radius:25px;
         overflow:hidden;
-        box-shadow:0 5px 15px rgba(0,0,0,.08);
+        box-shadow:0 10px 30px rgba(16,185,129,.08);
     ">
 
         <div style="
@@ -320,12 +330,16 @@
             ">
 
                 <thead style="
-                    background:#eef2ff;
+                    background:#d1fae5;
                 ">
 
                     <tr>
 
-                        <th style="padding:20px;text-align:left;">
+                        <th style="
+                             padding:20px;
+                             text-align:left;
+                             color:#065f46;
+                        ">
                             Tanggal
                         </th>
 
@@ -465,7 +479,7 @@
 
                                 <a href="/transactions/{{ $transaction->id }}/edit"
                                    style="
-                                        background:#2563eb;
+                                        background:#10b981;
                                         color:white;
                                         padding:10px 16px;
                                         border-radius:12px;

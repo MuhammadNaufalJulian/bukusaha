@@ -191,7 +191,7 @@ document
     position:fixed;
     top:25px;
     right:25px;
-    background:linear-gradient(135deg,#22c55e,#16a34a);
+    background:linear-gradient(135deg,#10b981,#059669);
     color:white;
     padding:18px 22px;
     border-radius:18px;
@@ -289,7 +289,7 @@ setTimeout(() => {
 @endif
 
 <div style="
-    background:#f5eef8;
+    background:#ecfdf5;
     min-height:100vh;
     padding:25px;
 ">
@@ -297,7 +297,7 @@ setTimeout(() => {
     <!-- HEADER -->
 
     <div style="
-        background:#f3eef7;
+        background:#d1fae5;
         padding:25px;
         border-radius:25px;
         margin-bottom:25px;
@@ -306,14 +306,14 @@ setTimeout(() => {
         <h1 style="
             font-size:34px;
             font-weight:bold;
-            color:#312e81;
+            color:#064e3b;
             margin-bottom:8px;
         ">
             Dashboard Keuangan • v1.0
         </h1>
 
         <p style="
-            color:#6366f1;
+            color:#047857;
             font-size:15px;
         ">
             Ringkasan transaksi dan keuangan Anda
@@ -324,7 +324,7 @@ setTimeout(() => {
     <!-- CARD UTAMA -->
 
     <div style="
-        background:linear-gradient(135deg,#2563eb,#06b6d4);
+        background:linear-gradient(135deg,#10b981,#059669);
         border-radius:25px;
         padding:30px;
         color:white;
@@ -829,7 +829,7 @@ setTimeout(() => {
 
     <a href="/transactions/create"
        style="
-            background:#2563eb;
+            background:#10b981;
             color:white;
             padding:12px 20px;
             border-radius:12px;
@@ -844,7 +844,7 @@ setTimeout(() => {
 
         <a href="/transactions"
            style="
-                color:#2563eb;
+                color:#059669;
                 text-decoration:none;
                 font-weight:bold;
                 margin-right:30px;
@@ -983,7 +983,7 @@ $textColor = $transaction->type == 'pemasukan'
             <a
                 href="/transactions/{{ $transaction->id }}/edit"
                 style="
-                    color:#2563eb;
+                    background:#10b981;
                     text-decoration:none;
                     font-size:14px;
                     font-weight:bold;
@@ -1108,9 +1108,9 @@ document.addEventListener("DOMContentLoaded", function () {
     4000000
 ],
 
-                    borderColor: '#16a34a',
+                    borderColor: '#10b981',
 
-                    backgroundColor: 'rgba(22,163,74,0.1)',
+                    backgroundColor: 'rgba(16,185,129,0.12)',
 
                     tension: 0.4,
 
