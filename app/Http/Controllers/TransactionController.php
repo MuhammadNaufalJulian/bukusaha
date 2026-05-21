@@ -23,7 +23,7 @@ class TransactionController extends Controller
         ]);
 
         Transaction::create([
-            'user_id' => 1,
+            'user_id' => auth()->id(),
             'type' => $request->type,
             'category' => $request->category,
             'amount' => (int) $request->amount,
@@ -42,7 +42,7 @@ class TransactionController extends Controller
     $year = $request->get('year', date('Y'));
     $month = $request->get('month');
 
-    $query = Transaction::query();
+    $query = Transaction::where('user_id', auth()->id());
 
     // FILTER TAHUN
 
@@ -90,15 +90,17 @@ class TransactionController extends Controller
 
     // TOTAL PEMASUKAN
 
-    $totalIncome = (clone $query)
-        ->where('type', 'pemasukan')
-        ->sum('amount');
+  $totalIncome = Transaction::where('user_id', auth()->id())
+    ->whereYear('transaction_date', $year)
+    ->where('type', 'pemasukan')
+    ->sum('amount');
 
     // TOTAL PENGELUARAN
 
-    $totalExpense = (clone $query)
-        ->where('type', 'pengeluaran')
-        ->sum('amount');
+    $totalExpense = Transaction::where('user_id', auth()->id())
+    ->whereYear('transaction_date', $year)
+    ->where('type', 'pengeluaran')
+    ->sum('amount');
 
     return view('transactions.index', compact(
         'transactions',
