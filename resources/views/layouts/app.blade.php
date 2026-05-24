@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
@@ -13,6 +13,109 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
+        <style>
+
+*{
+    box-sizing:border-box;
+}
+
+img{
+    max-width:100%;
+}
+
+table{
+    width:100%;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/*
+|--------------------------------------------------------------------------
+| MOBILE RESPONSIVE
+|--------------------------------------------------------------------------
+*/
+
+@media(max-width:768px){
+
+    h1{
+        font-size:28px !important;
+    }
+
+    h2{
+        font-size:22px !important;
+    }
+
+    h3{
+        font-size:18px !important;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | FLEX MOBILE
+    |--------------------------------------------------------------------------
+    */
+
+    .mobile-column{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | GRID MOBILE
+    |--------------------------------------------------------------------------
+    */
+
+    .mobile-grid-1{
+        grid-template-columns:1fr !important;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | TABLE MOBILE
+    |--------------------------------------------------------------------------
+    */
+
+    .table-responsive{
+        overflow-x:auto;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | CARD TRANSACTION
+    |--------------------------------------------------------------------------
+    */
+
+    .transaction-card{
+
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:20px;
+    }
+
+    .transaction-right{
+
+        width:100%;
+        text-align:left !important;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | BUTTON MOBILE
+    |--------------------------------------------------------------------------
+    */
+
+    .mobile-full{
+        width:100%;
+    }
+
+}
+
+</style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">

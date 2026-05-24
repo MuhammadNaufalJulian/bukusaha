@@ -296,12 +296,20 @@ setTimeout(() => {
 
     <!-- HEADER -->
 
-    <div style="
+<a href="/transactions">
+
+    <div  style="
         background:#d1fae5;
         padding:25px;
         border-radius:25px;
         margin-bottom:25px;
-    ">
+        cursor:pointer;
+        transition:.2s;
+    "
+    onmouseover="this.style.transform='scale(1.01)'"
+    onmouseout="this.style.transform='scale(1)'"
+    >
+    
 
         <h1 style="
             font-size:34px;
@@ -321,103 +329,180 @@ setTimeout(() => {
 
     </div>
 
+</a>
+
     <!-- CARD UTAMA -->
 
-    <div style="
-        background:linear-gradient(135deg,#10b981,#059669);
-        border-radius:25px;
-        padding:30px;
-        color:white;
-        position:relative;
-        overflow:hidden;
-        margin-bottom:25px;
-        box-shadow:0 10px 30px rgba(37,99,235,.3);
-    ">
+    <!-- QUICK ACTION -->
 
-        <div style="
-            width:70px;
-            height:70px;
-            background:rgba(255,255,255,.2);
-            border-radius:18px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            margin-bottom:30px;
-            font-size:30px;
-        ">
-            💳
-        </div>
+<div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+    margin-bottom:25px;
+">
+
+    <!-- QUICK ACTION -->
+
+<div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+    margin-bottom:25px;
+">
+
+    <!-- TAMBAH PEMASUKAN -->
+
+    <button
+    type="button"
+        onclick="openTransactionModal('pemasukan')"
+        style="
+            border:none;
+            cursor:pointer;
+            background:linear-gradient(135deg,#10b981,#059669);
+            border-radius:28px;
+            padding:32px;
+            color:white;
+            text-decoration:none;
+            position:relative;
+            overflow:hidden;
+            box-shadow:0 15px 35px rgba(16,185,129,.25);
+            transition:.25s;
+            display:block;
+            text-align:left;
+        "
+        onmouseover="this.style.transform='translateY(-4px)'"
+        onmouseout="this.style.transform='translateY(0)'"
+    >
 
         <div style="
             position:absolute;
-            top:25px;
-            right:25px;
-            background:rgba(255,255,255,.2);
-            padding:8px 18px;
-            border-radius:30px;
-            font-size:13px;
-        ">
-            Total
-        </div>
+            top:-40px;
+            right:-40px;
+            width:140px;
+            height:140px;
+            background:rgba(255,255,255,.08);
+            border-radius:50%;
+        "></div>
 
         <div style="
-            border:1px solid rgba(255,255,255,.3);
-            border-radius:20px;
-            padding:25px;
+            width:75px;
+            height:75px;
+            border-radius:22px;
+            background:rgba(255,255,255,.18);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:34px;
+            margin-bottom:28px;
             backdrop-filter:blur(5px);
         ">
-
-            <p style="
-                font-size:14px;
-                opacity:.9;
-                margin-bottom:10px;
-                letter-spacing:1px;
-            ">
-                SALDO SAAT INI
-            </p>
-
-            <h1 style="
-                font-size:48px;
-                font-weight:bold;
-                margin-bottom:20px;
-            ">
-                Rp {{ number_format($balance) }}
-            </h1>
-
-            <hr style="
-                border:none;
-                border-top:1px solid rgba(255,255,255,.3);
-                margin-bottom:15px;
-            ">
-
-            <div style="
-                display:flex;
-                align-items:center;
-                gap:10px;
-                font-size:14px;
-            ">
-
-                <div style="
-                    width:8px;
-                    height:8px;
-                    background:#4ade80;
-                    border-radius:50%;
-                "></div>
-
-                Aktif
-
-            </div>
-
+            ↗
         </div>
 
-    </div>
-    
+        <h2 style="
+            font-size:34px;
+            font-weight:bold;
+            margin-bottom:10px;
+        ">
+            Tambah
+            <br>
+            Pemasukan
+        </h2>
+
+        <p style="
+            opacity:.92;
+            line-height:1.7;
+            font-size:15px;
+            margin-bottom:25px;
+        ">
+            Catat pemasukan usaha harian dengan cepat dan rapi.
+        </p>
+
+    </button>
+
+    <!-- TAMBAH PENGELUARAN -->
+
+    <button
+    type="button"
+        onclick="openTransactionModal('pengeluaran')"
+        style="
+            border:none;
+            cursor:pointer;
+            background:linear-gradient(135deg,#ef4444,#dc2626);
+            border-radius:28px;
+            padding:32px;
+            color:white;
+            text-decoration:none;
+            position:relative;
+            overflow:hidden;
+            box-shadow:0 15px 35px rgba(239,68,68,.22);
+            transition:.25s;
+            display:block;
+            text-align:left;
+        "
+        onmouseover="this.style.transform='translateY(-4px)'"
+        onmouseout="this.style.transform='translateY(0)'"
+    >
+
+        <div style="
+            position:absolute;
+            top:-40px;
+            right:-40px;
+            width:140px;
+            height:140px;
+            background:rgba(255,255,255,.08);
+            border-radius:50%;
+        "></div>
+
+        <div style="
+            width:75px;
+            height:75px;
+            border-radius:22px;
+            background:rgba(255,255,255,.18);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:34px;
+            margin-bottom:28px;
+            backdrop-filter:blur(5px);
+        ">
+            ↘
+        </div>
+
+        <h2 style="
+            font-size:34px;
+            font-weight:bold;
+            margin-bottom:10px;
+        ">
+            Tambah
+            <br>
+            Pengeluaran
+        </h2>
+
+        <p style="
+            opacity:.92;
+            line-height:1.7;
+            font-size:15px;
+            margin-bottom:25px;
+        ">
+            Kelola pengeluaran usaha agar cashflow tetap sehat.
+        </p>
+
+    </button>
+
+</div>
+
+
+
+</div>
+
 
     <!-- GRID CARD -->
 
-    <div style="
+    <div class="mobile-grid-1" style="
         display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
         gap:20px;
     ">
 
@@ -808,49 +893,27 @@ setTimeout(() => {
 
 <!-- TRANSAKSI TERBARU -->
 
-<div style="margin-top:35px;">
+<div class="transaction-card" style="margin-top:35px;">
 
-    <div style="
+    <div class="mobile-column" style="
         display:flex;
         justify-content:space-between;
         align-items:center;
         margin-bottom:20px;
-        margin-left:30px;
     ">
 
         <h2 style="
             font-size:28px;
             font-weight:bold;
-            color:#1e293b;
+            color:#10b981;
         ">
             Transaksi Terbaru
         </h2>
         <div style="margin-top:20px;">
 
-    <a href="/transactions/create"
-       style="
-            background:#10b981;
-            color:white;
-            padding:12px 20px;
-            border-radius:12px;
-            text-decoration:none;
-            font-weight:bold;
-            display:inline-block;
-       ">
-        + Tambah Transaksi
-    </a>
+
 
 </div>
-
-        <a href="/transactions"
-           style="
-                color:#059669;
-                text-decoration:none;
-                font-weight:bold;
-                margin-right:30px;
-           ">
-            Lihat Semua
-        </a>
 
     </div>
 
@@ -946,7 +1009,7 @@ $textColor = $transaction->type == 'pemasukan'
 
     <!-- KANAN -->
 
-    <div style="
+    <div class="transaction-right" style="
         text-align:right;
         min-width:180px;
     ">
@@ -978,19 +1041,35 @@ $textColor = $transaction->type == 'pemasukan'
 
         <!-- EDIT -->
 
-        <div style="margin-top:10px;">
+        <div style="
+        margin-top:10px;
+        text-align:right;
+        ">
 
-            <a
-                href="/transactions/{{ $transaction->id }}/edit"
-                style="
-                    background:#10b981;
-                    text-decoration:none;
-                    font-size:14px;
-                    font-weight:bold;
-                "
-            >
-                ✏️ Edit
-            </a>
+            <button
+    type="button"
+
+    onclick="openEditModal(
+        '{{ $transaction->id }}',
+        '{{ $transaction->type }}',
+        '{{ $transaction->category }}',
+        '{{ $transaction->description }}',
+        '{{ $transaction->amount }}',
+        '{{ $transaction->transaction_date }}'
+    )"
+
+    style="
+        background:none;
+        border:none;
+        color:#10b981;
+        font-size:14px;
+        font-weight:bold;
+        cursor:pointer;
+        padding:0;
+    "
+>
+    ✏️ Edit
+</button>
 
             <form
     action="/transactions/{{ $transaction->id }}"
@@ -1030,135 +1109,722 @@ $textColor = $transaction->type == 'pemasukan'
 
 </div>
 
-<!-- GRAFIK KEUANGAN -->
 
-<div style="
-    margin:40px 30px 40px 30px;
-    background:white;
-    border-radius:25px;
-    padding:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-">
 
-    <h2 style="
-        font-size:28px;
-        font-weight:bold;
-        margin-bottom:25px;
-        color:#1e293b;
-    ">
-        Grafik Keuangan
-    </h2>
+<!-- MODAL TAMBAH TRANSAKSI -->
 
-    <div style="
-    position:relative;
-    height:400px;
-    width:100%;
-">
-    <canvas id="financeChart"></canvas>
+<div
+    id="transactionModal"
+    style="
+        position:fixed;
+        inset:0;
+        background:rgba(15,23,42,.55);
+        backdrop-filter:blur(5px);
+        display:none;
+        align-items:center;
+        justify-content:center;
+        z-index:999999;
+        padding:20px;
+    "
+>
+
+    <div
+        style="
+            background:white;
+            width:100%;
+            max-width:550px;
+            border-radius:30px;
+            padding:30px;
+            position:relative;
+            animation:popup .25s ease;
+            max-height:90vh;
+            overflow-y:auto;
+            box-shadow:0 20px 50px rgba(0,0,0,.25);
+        "
+    >
+
+        <!-- CLOSE -->
+
+        <button
+            type="button"
+            onclick="closeTransactionModal()"
+            style="
+                position:absolute;
+                top:18px;
+                right:18px;
+                width:42px;
+                height:42px;
+                border:none;
+                border-radius:12px;
+                background:#f1f5f9;
+                font-size:20px;
+                cursor:pointer;
+                font-weight:bold;
+            "
+        >
+            ✕
+        </button>
+
+        <!-- TITLE -->
+
+        <h2
+            id="transactionModalTitle"
+            style="
+                font-size:30px;
+                font-weight:bold;
+                margin-bottom:10px;
+                color:#0f172a;
+            "
+        >
+            Tambah Transaksi
+        </h2>
+
+        <p
+            id="transactionModalDesc"
+            style="
+                color:#64748b;
+                margin-bottom:30px;
+            "
+        >
+            Tambahkan pemasukan atau pengeluaran baru
+        </p>
+
+        <!-- FORM -->
+
+        <form
+            id="transactionForm"
+            action="/transactions"
+            method="POST"
+        >
+
+            @csrf
+
+            <!-- TYPE -->
+
+            <input
+                type="hidden"
+                name="type"
+                id="transactionType"
+            >
+
+            <!-- CATEGORY -->
+
+            <div style="margin-bottom:20px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:10px;
+                    font-weight:bold;
+                ">
+                    Kategori
+                </label>
+
+                <input
+                    type="text"
+                    name="category"
+                    required
+                    placeholder="Contoh: Penjualan"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        border-radius:14px;
+                        border:1px solid #ddd;
+                        outline:none;
+                    "
+                >
+
+            </div>
+
+            <!-- AMOUNT -->
+
+            <div style="margin-bottom:20px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:10px;
+                    font-weight:bold;
+                ">
+                    Jumlah
+                </label>
+
+                <input
+                    type="number"
+                    name="amount"
+                    required
+                    placeholder="Masukkan nominal"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        border-radius:14px;
+                        border:1px solid #ddd;
+                        outline:none;
+                    "
+                >
+
+            </div>
+
+            <!-- DESCRIPTION -->
+
+            <div style="margin-bottom:20px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:10px;
+                    font-weight:bold;
+                ">
+                    Deskripsi
+                </label>
+
+                <textarea
+                    name="description"
+                    rows="4"
+                    placeholder="Masukkan deskripsi transaksi"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        border-radius:14px;
+                        border:1px solid #ddd;
+                        resize:none;
+                        outline:none;
+                    "
+                ></textarea>
+
+            </div>
+
+            <!-- DATE -->
+
+            <div style="margin-bottom:30px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:10px;
+                    font-weight:bold;
+                ">
+                    Tanggal
+                </label>
+
+                <input
+                    type="date"
+                    name="transaction_date"
+                    value="{{ date('Y-m-d') }}"
+                    required
+                    style="
+                        width:100%;
+                        padding:15px;
+                        border-radius:14px;
+                        border:1px solid #ddd;
+                        outline:none;
+                    "
+                >
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                id="transactionSubmitBtn"
+                style="
+                    width:100%;
+                    background:linear-gradient(135deg,#10b981,#059669);
+                    color:white;
+                    border:none;
+                    padding:16px;
+                    border-radius:16px;
+                    font-size:16px;
+                    font-weight:bold;
+                    cursor:pointer;
+                    box-shadow:0 10px 25px rgba(16,185,129,.25);
+                "
+            >
+                ➕ Simpan Transaksi
+            </button>
+
+        </form>
+
+    </div>
+
 </div>
-</div>
 
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- SCRIPT MODAL TRANSAKSI -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+function openTransactionModal(type){
 
-    const ctx = document.getElementById('financeChart').getContext('2d');
+    const modal =
+        document.getElementById('transactionModal');
 
-    new Chart(ctx, {
+    const form =
+        document.getElementById('transactionForm');
 
-        type: 'line',
+    form.reset();
 
-        data: {
+    document.getElementById('transactionType')
+        .value = type;
 
-            labels: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'Mei',
-                'Jun',
-                'Jul',
-                'Ags',
-                'Sep',
-                'Okt',
-                'Nov',
-                'Des'
-            ],
+    const title =
+        document.getElementById('transactionModalTitle');
 
-            datasets: [
+    const desc =
+        document.getElementById('transactionModalDesc');
 
-                {
-                    label: 'Pemasukan',
+    const btn =
+        document.getElementById('transactionSubmitBtn');
 
-                    data: [
-    1200000,
-    1800000,
-    1500000,
-    2100000,
-    2400000,
-    1900000,
-    2600000,
-    2800000,
-    2200000,
-    3100000,
-    3500000,
-    4000000
-],
+    if(type === 'pemasukan'){
 
-                    borderColor: '#10b981',
+        title.innerHTML = 'Tambah Pemasukan';
 
-                    backgroundColor: 'rgba(16,185,129,0.12)',
+        desc.innerHTML =
+            'Tambahkan data pemasukan baru';
 
-                    tension: 0.4,
+        btn.style.background =
+            'linear-gradient(135deg,#10b981,#059669)';
 
-                    fill: true
-                },
+    }else{
 
-                {
-                    label: 'Pengeluaran',
+        title.innerHTML = 'Tambah Pengeluaran';
 
-                    data: [
-    800000,
-    1200000,
-    1000000,
-    1500000,
-    1800000,
-    1400000,
-    1900000,
-    2100000,
-    1600000,
-    2200000,
-    2500000,
-    300000
-],
+        desc.innerHTML =
+            'Tambahkan data pengeluaran baru';
 
-                    borderColor: '#dc2626',
+        btn.style.background =
+            'linear-gradient(135deg,#ef4444,#dc2626)';
 
-                    backgroundColor: 'rgba(220,38,38,0.1)',
+    }
 
-                    tension: 0.4,
+    modal.style.display = 'flex';
 
-                    fill: true
-                }
+}
 
-            ]
+function closeTransactionModal(){
 
-        },
+    document.getElementById('transactionModal')
+        .style.display = 'none';
 
-        options: {
+}
 
-            responsive: true,
+window.addEventListener('click', function(event){
 
-            maintainAspectRatio: false
+    const modal =
+        document.getElementById('transactionModal');
 
-        }
+    if(event.target === modal){
 
-    });
+        closeTransactionModal();
+
+    }
 
 });
 
 </script>
+
+<!-- MODAL EDIT -->
+
+<div
+    id="editModal"
+    style="
+        position:fixed;
+        inset:0;
+        background:rgba(15,23,42,.55);
+        backdrop-filter:blur(5px);
+        display:none;
+        align-items:center;
+        justify-content:center;
+        z-index:999999;
+        padding:20px;
+    "
+>
+
+    <div style="
+        background:white;
+        width:100%;
+        max-width:520px;
+        border-radius:28px;
+        padding:30px;
+        animation:popup .25s ease;
+        box-shadow:0 20px 50px rgba(0,0,0,.25);
+    ">
+
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:25px;
+        ">
+
+            <h2 style="
+                font-size:28px;
+                font-weight:bold;
+                color:#0f172a;
+            ">
+                Edit Transaksi
+            </h2>
+
+            <button
+                onclick="closeEditModal()"
+                style="
+                    border:none;
+                    background:#f1f5f9;
+                    width:42px;
+                    height:42px;
+                    border-radius:12px;
+                    cursor:pointer;
+                    font-size:18px;
+                "
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <form
+            id="editForm"
+            method="POST"
+        >
+
+            @csrf
+            @method('PUT')
+
+            <input
+                type="hidden"
+                name="type"
+                id="editType"
+            >
+
+            <!-- KATEGORI -->
+
+            <div style="margin-bottom:18px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:8px;
+                    font-weight:bold;
+                    color:#334155;
+                ">
+                    Kategori
+                </label>
+
+                <input
+                    type="text"
+                    name="category"
+                    id="editCategory"
+                    required
+                    style="
+                        width:100%;
+                        padding:14px;
+                        border-radius:14px;
+                        border:1px solid #dbe2ea;
+                        outline:none;
+                    "
+                >
+
+            </div>
+
+            <!-- DESKRIPSI -->
+
+            <div style="margin-bottom:18px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:8px;
+                    font-weight:bold;
+                    color:#334155;
+                ">
+                    Deskripsi
+                </label>
+
+                <textarea
+                    name="description"
+                    id="editDescription"
+                    rows="3"
+                    style="
+                        width:100%;
+                        padding:14px;
+                        border-radius:14px;
+                        border:1px solid #dbe2ea;
+                        outline:none;
+                        resize:none;
+                    "
+                ></textarea>
+
+            </div>
+
+            <!-- NOMINAL -->
+
+            <div style="margin-bottom:18px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:8px;
+                    font-weight:bold;
+                    color:#334155;
+                ">
+                    Nominal
+                </label>
+
+                <input
+                    type="number"
+                    name="amount"
+                    id="editAmount"
+                    required
+                    style="
+                        width:100%;
+                        padding:14px;
+                        border-radius:14px;
+                        border:1px solid #dbe2ea;
+                        outline:none;
+                    "
+                >
+
+            </div>
+
+            <!-- TANGGAL -->
+
+            <div style="margin-bottom:25px;">
+
+                <label style="
+                    display:block;
+                    margin-bottom:8px;
+                    font-weight:bold;
+                    color:#334155;
+                ">
+                    Tanggal
+                </label>
+
+                <input
+                    type="date"
+                    name="transaction_date"
+                    id="editDate"
+                    required
+                    style="
+                        width:100%;
+                        padding:14px;
+                        border-radius:14px;
+                        border:1px solid #dbe2ea;
+                        outline:none;
+                    "
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                id="editSubmitButton"
+                style="
+                    width:100%;
+                    border:none;
+                    padding:16px;
+                    border-radius:16px;
+                    color:white;
+                    font-size:16px;
+                    font-weight:bold;
+                    cursor:pointer;
+                    background:linear-gradient(135deg,#10b981,#059669);
+                "
+            >
+                Simpan Perubahan
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openEditModal(
+    id,
+    type,
+    category,
+    description,
+    amount,
+    date
+){
+
+    document.getElementById('editModal').style.display = 'flex';
+
+    document.getElementById('editForm').action =
+        '/transactions/' + id;
+
+    document.getElementById('editType').value =
+        type;
+
+    document.getElementById('editCategory').value =
+        category;
+
+    document.getElementById('editDescription').value =
+        description;
+
+    document.getElementById('editAmount').value =
+        amount;
+
+    document.getElementById('editDate').value =
+        date;
+
+    const btn =
+        document.getElementById('editSubmitButton');
+
+    if(type === 'pemasukan'){
+
+        btn.style.background =
+            'linear-gradient(135deg,#10b981,#059669)';
+
+    }else{
+
+        btn.style.background =
+            'linear-gradient(135deg,#ef4444,#dc2626)';
+
+    }
+
+}
+
+function closeEditModal(){
+
+    document.getElementById('editModal').style.display = 'none';
+
+}
+
+</script>
+
+
+<style>
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    /* WRAPPER */
+
+    .mobile-grid-1{
+        grid-template-columns:1fr !important;
+    }
+
+    /* HEADER */
+
+    h1{
+        font-size:26px !important;
+    }
+
+    /* QUICK ACTION */
+
+    .mobile-column{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:15px;
+        margin-left:50px;
+
+    }
+
+    /* TRANSACTION CARD */
+
+    .transaction-card{
+        margin-top:25px !important;
+    }
+
+    /* TRANSACTION ITEM */
+
+    .transaction-card > div:last-child > div{
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        gap:18px;
+    }
+
+    .transaction-right{
+        width:100%;
+        text-align:left !important;
+    }
+
+    /* CARD */
+
+    .transaction-card h2{
+        font-size:22px !important;
+    }
+
+    /* BUTTON */
+
+    a,
+    button{
+        font-size:14px !important;
+    }
+
+    /* MODAL */
+
+    #transactionModal > div,
+    #editModal > div,
+    #deleteModal > div{
+        width:100% !important;
+        max-width:100% !important;
+        border-radius:24px !important;
+        padding:22px !important;
+    }
+
+    /* TITLE MODAL */
+
+    #transaction:ModalTitle{
+        font-size:24px !important;
+    }
+
+    /* INPUT */
+
+    input,
+    textarea{
+        font-size:16px !important;
+    }
+
+    /* SUCCESS ALERT */
+
+    #success-alert{
+        right:15px !important;
+        left:15px !important;
+        min-width:auto !important;
+        top:15px !important;
+    }
+
+    /* SPACING */
+
+    .transaction-card div[style*="margin:0 30px"]{
+        margin:15px !important;
+
+    }
+
+    .transaction-card div[style*="margin-left:30px"]{
+        margin-left:0 !important;
+    }
+
+}
+
+/* EXTRA SMALL */
+
+@media (max-width:480px){
+
+    h1{
+        font-size:22px !important;
+    }
+
+    .transaction-card h2{
+        font-size:20px !important;
+    }
+
+    .transaction-right h2{
+        font-size:20px !important;
+    }
+
+    #transactionModalTitle{
+        font-size:22px !important;
+    }
+
+}
+
+</style>
+
 </x-app-layout>

@@ -56,31 +56,41 @@
                     Jenis Transaksi
                 </label>
 
-                <select
-                    name="type"
-                    required
-                    style="
-                        width:100%;
-                        padding:15px;
-                        border-radius:15px;
-                        border:1px solid #ddd;
-                        font-size:15px;
-                    "
-                >
+                @php
+    $selectedType = request('type');
+@endphp
 
-                    <option value="">
-                        Pilih Jenis
-                    </option>
+<select
+    name="type"
+    required
+    style="
+        width:100%;
+        padding:15px;
+        border-radius:15px;
+        border:1px solid #ddd;
+        font-size:15px;
+    "
+>
 
-                    <option value="pemasukan">
-                        Pemasukan
-                    </option>
+    <option value="">
+        Pilih Jenis
+    </option>
 
-                    <option value="pengeluaran">
-                        Pengeluaran
-                    </option>
+    <option
+        value="pemasukan"
+        {{ $selectedType == 'pemasukan' ? 'selected' : '' }}
+    >
+        Pemasukan
+    </option>
 
-                </select>
+    <option
+        value="pengeluaran"
+        {{ $selectedType == 'pengeluaran' ? 'selected' : '' }}
+    >
+        Pengeluaran
+    </option>
+
+</select>
 
             </div>
 
